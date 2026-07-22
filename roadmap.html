@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Homelab Roadmap</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: #111;
+    color: #eee;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 60px 20px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .subtitle {
+    color: #aaa;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .back-link {
+    color: #888;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+  }
+  .back-link:hover { color: #eee; }
+
+  .board {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .section {
+    background-color: #1a1a1a;
+    border: 1px solid #292929;
+    border-radius: 10px;
+    padding: 24px 28px;
+  }
+
+  .section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+  }
+
+  .section .section-desc {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+
+  ul.task-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  li.task {
+    background-color: #202020;
+    border: 1px solid #2c2c2c;
+    border-left: 4px solid #444;
+    border-radius: 6px;
+    padding: 14px 16px;
+  }
+
+  li.task.p1 { border-left-color: #e5484d; }
+  li.task.p2 { border-left-color: #ffa53c; }
+  li.task.p3 { border-left-color: #f5d90a; }
+  li.task.p4 { border-left-color: #555; }
+
+  .task-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .task-title {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .badge {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 2px 8px;
+    border-radius: 20px;
+    white-space: nowrap;
+    color: #111;
+    font-weight: 700;
+  }
+
+  .badge.p1 { background-color: #e5484d; }
+  .badge.p2 { background-color: #ffa53c; }
+  .badge.p3 { background-color: #f5d90a; }
+  .badge.p4 { background-color: #555; color: #eee; }
+
+  .task-desc {
+    color: #bbb;
+    font-size: 0.9rem;
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+
+  .task-note {
+    color: #7fa8ff;
+    font-size: 0.85rem;
+    margin-top: 6px;
+  }
+
+  .task-note a { color: #7fa8ff; }
+
+  .task-desc a { color: #9fc2ff; }
+
+  ul.subtasks {
+    list-style: none;
+    margin-top: 10px;
+    padding-left: 16px;
+    border-left: 2px solid #333;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  ul.subtasks li {
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+
+  ul.subtasks li::before {
+    content: "– ";
+    color: #666;
+  }
+</style>
+</head>
+<body>
+
+  <a class="back-link" href="index.html">&larr; Back</a>
+  <h1>Homelab Roadmap</h1>
+  <p class="subtitle">What's running, what's next, and what's on the horizon.</p>
+
+  <div class="board">
+
+    <div class="section">
+      <h2>Up Next</h2>
+      <p class="section-desc">Actively being worked on.</p>
+      <ul class="task-list">
+
+        <li class="task p3">
+          <div class="task-top">
+            <span class="task-title">Set up Immich</span>
+            <span class="badge p3">P3</span>
+          </div>
+          <div class="task-desc">Photo and video backup solution directly from your mobile phone (alternative to Google Photos).</div>
+          <div class="task-note">Note: <a href="https://docs.immich.app/install/docker-compose/" target="_blank">docs.immich.app/install/docker-compose</a></div>
+        </li>
+
+        <li class="task p3">
+          <div class="task-top">
+            <span class="task-title">Set up Paperless NGX</span>
+            <span class="badge p3">P3</span>
+          </div>
+          <div class="task-desc"><em>Community-supported</em> open-source document management system that transforms physical documents into a searchable online archive — keep <em>less paper</em>. See <a href="https://docs.paperless-ngx.com/" target="_blank">docs.paperless-ngx.com</a>.</div>
+        </li>
+
+        <li class="task p4">
+          <div class="task-top">
+            <span class="task-title">Set up ddclient on p01proxy01</span>
+            <span class="badge p4">P4</span>
+          </div>
+          <div class="task-desc">Updates DNS with the local IP when it changes.</div>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Homelab &mdash; Planned</h2>
+      <p class="section-desc">Work that's been decided on and is queued up to actually get done next.</p>
+      <ul class="task-list">
+
+        <li class="task p1">
+          <div class="task-top">
+            <span class="task-title">Look into self hosting Obsidian</span>
+            <span class="badge p1">P1</span>
+          </div>
+          <div class="task-note">Note: Can be used for personal vaults, but work vault needs to stay on iPhone.</div>
+        </li>
+
+        <li class="task p1">
+          <div class="task-top">
+            <span class="task-title">TTRPG Self Host Project</span>
+            <span class="badge p1">P1</span>
+          </div>
+          <ul class="subtasks">
+            <li>Finish transferring books over to Grimoire.</li>
+            <li>VTT Hosting (can be done through AMP)</li>
+          </ul>
+        </li>
+
+        <li class="task p4">
+          <div class="task-top">
+            <span class="task-title">Research more ways to utilize GitHub</span>
+            <span class="badge p4">P4</span>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Homelab &mdash; Candidates</h2>
+      <p class="section-desc">Candidates for the next thing to spin up on the homelab.</p>
+      <ul class="task-list">
+
+        <li class="task p1">
+          <div class="task-top">
+            <span class="task-title">Homebox</span>
+            <span class="badge p1">P1</span>
+          </div>
+          <div class="task-desc">Asset tracking &mdash; <a href="https://github.com/sysadminsmedia/homebox" target="_blank">sysadminsmedia/homebox on GitHub</a>: a continuation of HomeBox, an inventory and organization system built for the home user.</div>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Homelab &mdash; Future Plans</h2>
+      <p class="section-desc">Plans set for the near to distant future.</p>
+      <ul class="task-list">
+
+        <li class="task p2">
+          <div class="task-top">
+            <span class="task-title">Buy external SSDs for long term backups</span>
+            <span class="badge p2">P2</span>
+          </div>
+          <div class="task-desc">Use them to back up all the important data once a quarter, then place them back into storage.</div>
+          <div class="task-note">Note: Possibly hard drives instead, for the cost savings.</div>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+
+</body>
+</html>
